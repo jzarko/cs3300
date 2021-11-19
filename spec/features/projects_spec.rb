@@ -1,11 +1,30 @@
 require 'rails_helper'
-#require_relative '../support/devise'
+require "/root/protected-thicket-73961/config/initializers/devise"
+require "/root/protected-thicket-73961/spec/support/factorybot"
+# include Auth
+# include ControllerMacros
 
+# def log_in
+#   visit new_project_path
+#   click_link 'Sign up'
+#   within("form") do 
+#     fill_in "Email", with: "heresbobby@gmail.com"
+#     fill_in "Password", with: "abcdefg"
+#     fill_in "Password confirmation", with: "abcdefg"
+#     click_link 'Sign up'
+#   end
+# end
+
+def userlog_in
+  #user = FactoryBot.create(:user)
+  sign_in_user!
+  visit new_project_path
+end
 
 RSpec.feature "Projects", type: :feature do
   context "Create new project" do
+    userlog_in
     before(:each) do
-      visit new_project_path
       within("form") do
         fill_in "Title", with: "Test title"
       end
