@@ -9,6 +9,11 @@ SimpleCov.start 'rails' do
   add_filter '/spec/'
 end
 
+require 'devise'
+require 'factory_bot_rails'
+require 'capybara'
+require_relative 'support/controller_macros'
+
 require File.expand_path('../config/environment', __dir__)
 
 # Prevent database truncation if the environment is production

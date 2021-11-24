@@ -1,7 +1,5 @@
-# Kevyn Kelso helped with this
 module Auth
     def create_user!
-      # @user = User.create(email: 'foo@bar.com', password: '11111111')
       @user = FactoryBot.create(:user)
     end
   
@@ -23,5 +21,6 @@ module Auth
       sign_in_user!
       yield
       sign_out_user!
+      
     end
   end

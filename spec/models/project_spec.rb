@@ -1,13 +1,8 @@
 require "rails_helper"
-require_relative "../support/factorybot"
-include Auth
-include ControllerMacros
-  
 
 RSpec.describe Project, type: :model do
   context "validations tests" do
     it "ensures the title is present" do
-      visit new_project_path
       project = Project.new(description: "Content of the description")
       expect(project.valid?).to eq(false)
     end

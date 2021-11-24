@@ -1,6 +1,5 @@
 require "rails_helper"
-require "/root/protected-thicket-73961/config/initializers/devise"
-require "/root/protected-thicket-73961/spec/support/factorybot.rb"
+require_relative '../support/devise'
 
 RSpec.describe ProjectsController, type: :controller do
   login_user

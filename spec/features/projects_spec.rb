@@ -1,30 +1,51 @@
 require 'rails_helper'
-require "/root/protected-thicket-73961/config/initializers/devise"
-require "/root/protected-thicket-73961/spec/support/factorybot"
-# include Auth
-# include ControllerMacros
+require_relative '../support/devise'
 
-# def log_in
-#   visit new_project_path
-#   click_link 'Sign up'
-#   within("form") do 
-#     fill_in "Email", with: "heresbobby@gmail.com"
-#     fill_in "Password", with: "abcdefg"
-#     fill_in "Password confirmation", with: "abcdefg"
-#     click_link 'Sign up'
-#   end
-# end
+def sign_user_in
+  visit root_path
+  click_link "New Project"
+  click_link "Sign up"
+  within("form") do
+    fill_in "Email", with: "testemail1@gmail.com"
+    fill_in "Password", with: "testPassword1"
+    fill_in "Password confirmation", with: "testPassword1"
+    click_button "Sign up"
+  end
+end
 
-def userlog_in
-  #user = FactoryBot.create(:user)
-  sign_in_user!
-  visit new_project_path
+def log_user_in
+  visit root_path
+  click_link "New Project"
+  within("form") do
+    fill_in "Email", with: "testemail1@gmail.com"
+    fill_in "Password", with: "testPassword1"
+    click_button "Log in"
+  end
 end
 
 RSpec.feature "Projects", type: :feature do
+
+  context "Sign Up" do
+    scenario "should successfully sign up a user" do
+      sign_user_in
+      expect(page).to have_content("You have signed up successfully")
+    end
+  end
+
+  context "Login" do
+    scenario "should log in an existing user" do
+      sign_user_in
+      click_link "Back"
+      click_link "Logout"
+      log_user_in
+      expect(page).to have_content("Signed in successfully")
+    end
+  end
+
   context "Create new project" do
-    userlog_in
     before(:each) do
+      visit new_project_path
+      sign_user_in
       within("form") do
         fill_in "Title", with: "Test title"
       end
@@ -45,6 +66,7 @@ RSpec.feature "Projects", type: :feature do
   context "Update project" do
     let(:project) { Project.create(title: "Test title", description: "Test content") }
     before(:each) do
+      sign_user_in
       visit edit_project_path(project)
     end
 
@@ -68,6 +90,7 @@ RSpec.feature "Projects", type: :feature do
   context "Remove existing project" do
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
     scenario "remove project" do
+      sign_user_in
       visit projects_path
       click_link "Destroy"
       expect(page).to have_content("Project was successfully destroyed")
