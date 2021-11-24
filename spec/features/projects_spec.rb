@@ -1,6 +1,7 @@
 require 'rails_helper'
 require_relative '../support/devise'
 
+# Signs a user in for the first time
 def sign_user_in
   visit root_path
   click_link "New Project"
@@ -13,6 +14,7 @@ def sign_user_in
   end
 end
 
+# Logs an existing user in. This can only be used in the same scenario block as sign_user_in
 def log_user_in
   visit root_path
   click_link "New Project"
