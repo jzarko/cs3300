@@ -1,3 +1,4 @@
+# All tests should work and CircleCI should now be able to deploy automatically to Heroku
 require 'rails_helper'
 require_relative '../support/devise'
 
