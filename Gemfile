@@ -6,6 +6,9 @@ ruby '2.7.0'
 # Devise gem
 gem 'devise'
 
+# Bootstrap to easily provide nice UI
+gem 'bootstrap'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use Puma as the app server
