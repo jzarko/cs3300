@@ -7,7 +7,7 @@ ruby '2.7.0'
 gem 'devise'
 
 # Bootstrap to easily provide nice UI
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
