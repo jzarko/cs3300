@@ -38,8 +38,8 @@ RSpec.feature "Projects", type: :feature do
   context "Login" do
     scenario "should log in an existing user" do
       sign_user_in
-      click_link "Back"
-      click_link "Logout"
+      click_button "Back"
+      click_button "Logout"
       log_user_in
       expect(page).to have_content("Signed in successfully")
     end
