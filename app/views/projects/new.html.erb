@@ -1,5 +1,8 @@
-<h1>New Project</h1>
+<div>
+    <h1 style="background-color: black; color: rgba(91, 243, 254, 1); padding-bottom: 20px; padding-top: 0.5rem; padding-bottom: 0.5rem">New Project</h1>
+    <%= render 'form', project: @project %>
+</div>
 
-<%= render 'form', project: @project %>
-
-<%= link_to 'Back', projects_path %>
+<div class="btn-group" style="float: right">
+  <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to 'Back', projects_path %></button>
+</div>

@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
+<p style="background-color: black; color: rgba(91, 243, 254, 1); padding-bottom: 20px; padding-top: 0.5rem; padding-bottom: 0.5rem">
+  <strong style="font-size: larger">Title:</strong>
   <%= @project.title %>
 </p>
 
@@ -10,5 +8,7 @@
   <%= @project.description %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="btn-group" style="float: right">
+  <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to 'Edit', edit_project_path(@project) %></button>
+  <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to 'Back', projects_path %></button>
+</div>
