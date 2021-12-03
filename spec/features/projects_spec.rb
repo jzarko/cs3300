@@ -28,12 +28,12 @@ end
 
 RSpec.feature "Projects", type: :feature do
 
-  context "Sign Up" do
-    scenario "should successfully sign up a user" do
-      sign_user_in
-      expect(page).to have_content("You have signed up successfully")
-    end
-  end
+  # context "Sign Up" do
+  #   scenario "should successfully sign up a user" do
+  #     sign_user_in
+  #     expect(page).to have_content("You have signed up successfully")
+  #   end
+  # end
 
   # context "Login" do
   #   scenario "should log in an existing user" do
@@ -56,6 +56,7 @@ RSpec.feature "Projects", type: :feature do
     scenario "should be successful" do
       fill_in "Description", with: "Test description"
       click_button "Create Project"
+      click_link "Back"
       expect(page).to have_content("Project was successfully created")
     end
 
@@ -77,6 +78,7 @@ RSpec.feature "Projects", type: :feature do
         fill_in "Description", with: "New description content"
       end
       click_button "Update Project"
+      click_link "Back"
       expect(page).to have_content("Project was successfully updated")
     end
 
