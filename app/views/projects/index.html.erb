@@ -1,22 +1,24 @@
 <div class="background_display">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" style="color: rgba(91, 243, 254, 1); font-size: 30px;" href="#">My Project Portfolio</a>
+  <a class="navbar-brand" style="color: rgba(91, 243, 254, 1); font-size: 30px; padding-left: 75px" href="#">My Project Portfolio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-    <% if user_signed_in? %>
-      <a class="nav-link" style="color: rgba(91, 243, 254, 1);" rel="nofollow" data-method="delete" href="/users/sign_out">Logout</a>
-    <% end %>
-    <% if !user_signed_in? %>
-      <a class="nav-link" style="color: rgba(91, 243, 254, 1);" href="/users/sign_in">Sign in</a>
-    <% end %>
-  </li>
-    </ul>
+    <div style="padding-left: 90%">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        <% if user_signed_in? %>
+          <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out" style="color: rgba(91, 243, 254, 1)">Logout</a>
+        <% end %>
+        <% if !user_signed_in? %>
+          <a class="nav-link" style="color: rgba(91, 243, 254, 1);" href="/users/sign_in">Sign in</a>
+        <% end %>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -46,6 +48,5 @@
   <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
   <button type="button"><%= link_to "Video", '/images/ProjectOverview.mp4' %></button>
 </div>
-
 
 </div>

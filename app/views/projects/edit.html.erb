@@ -1,12 +1,12 @@
-<h1 style="background-color: black; color: rgba(91, 243, 254, 1); padding-left: 20px; padding-bottom: 0.5rem">Editing Project</h1>
+<h1 style="background-color: black; color: rgba(91, 243, 254, 1); padding-left: 75px; padding-bottom: 0.5rem">Editing Project</h1>
 
-<div style="padding-left: 20px">
+<div style="padding-left: 75px">
   <div style="font-weight: bold">
     <%= render 'form', project: @project %>
   </div>
 </div>
 
 <div class="btn-group" style="float: right">
-  <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to 'Show', @project %></button>
+  <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to 'View', @project %></button>
   <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to 'Back', projects_path %></button>
 </div>
