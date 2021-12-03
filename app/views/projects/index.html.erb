@@ -2,6 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" style="color: rgba(91, 243, 254, 1); font-size: 30px; padding-left: 75px" href="#">My Project Portfolio</a>
+  <a class="nav-link" style="color: rgba(91, 243, 254, 1); padding-left: 24%"><%= notice %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -31,7 +32,7 @@
       <p class="card-text" style="background-color: rgba(91, 243, 254, 1); font-weight: bold; padding-left: 3%"><%= project.title %></p>
       <p class="card-text" style="overflow: hidden; max-height: 90%"><%= project.description %></p>
     </div>
-    <div class="btn-group a" style="background-color: black;">
+    <div class="btn-group a" style="background-color: black; display: flex;">
           <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "View", project %></button>
           <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "Edit", edit_project_path(project) %></button>
           <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "Delete", project, method: :delete, data: { confirm: 'Are you sure?' } %></button>
@@ -42,11 +43,10 @@
 </div>
 <br>
 
-
+<button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to "Project Overview", '/images/ProjectOverview.mp4' %></button>
 <div class="btn-group" style="float: right">
   <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to "New Project", new_project_path %></button>
   <button type="button" class="btn btn-sm btn-outline-secondary button_text" style="background-color: black"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
-  <button type="button"><%= link_to "Video", '/images/ProjectOverview.mp4' %></button>
 </div>
 
 </div>
